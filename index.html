@@ -300,9 +300,10 @@ typeText("text0",
 
 function closeBook(){
 
-document.getElementById("book").classList.remove("open")
+document.getElementById("book").style.display="none";
+document.querySelector(".container").style.display="none";
 
-document.getElementById("finalImage").classList.add("show")
+document.getElementById("finalImage").classList.add("show");
 
 }
 
