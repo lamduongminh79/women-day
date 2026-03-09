@@ -220,7 +220,7 @@ font-size:15px;
 
 <h1>🌸 Happy Women's Day 🌸</h1>
 
-<p>Chúc bạn một ngày 8/3 thật vui vẻ</p>
+<p>Hôm nay mình chơi lễ muộn đi hehee</p>
 
 <button onclick="openBook()">Nhấn vào đây 💌</button>
 
@@ -233,6 +233,7 @@ font-size:15px;
 <h2>Trang 1</h2>
 
 <div class="rose">🌹</div>
+<div class="typing" id="text0"></div>
 
 <button class="next" onclick="nextPage(2)">Trang tiếp ➜</button>
 
@@ -291,14 +292,19 @@ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"))
 
 document.getElementById("p"+page).classList.add("active")
 
+if(page===1){
+typeText("text0",
+"Lời nói đầu tiên thì hong biết nói gì hết thôi thì tặng cho vợ cành bông nè hẹ hẹ. Không anh chứ ai đố em tìm được ai giống anh thứ 2");
+}
+
 if(page===2){
 typeText("text1",
-"Nhân ngày 8/3, chúc bạn luôn vui vẻ, xinh đẹp và gặp nhiều may mắn trong cuộc sống.");
+"Nhân ngày 8/3, anh không phải là con người ngọt ngào trong lời nói em cũng biết nên là ngay lúc này anh không biết mình phải nói gì, thôi thì anh sẽ chúc em ngày càng đẹp hơn như những bông hoa hồng nỡ rộ khi gặp đúng mùa, chúc em tìm được những điều tuyệt vời nhất trong hành trình của em, những gì tuyệt vời luôn ở phía sau...");
 }
 
 if(page===3){
 typeText("text2",
-"Hy vọng rằng mỗi ngày của bạn đều tràn đầy niềm vui, nụ cười và những điều tuyệt vời.");
+"Như anh đã từng nói anh không cầu kì và phô trương, tình yêu của anh được định nghĩa hành động, và hành động của anh được chứng minh bằng 2 ngày tìm và lựa thật kĩ về món quà sắp tặng cho em nhưng do là Vĩnh Long không giao nhanh hoặc hỏa tốc được nên bị delay 2 3 ngày sau. Tình yêu của anh chỉ đơn giản là vậy thôi sẽ có trễ nhưng nhất định cô gái của anh không thiệt thòi đâu. Em có thắc mắc là món quà gì không ? bấm qua tiếp đi đắn đo lắm á nha ahihi");
 }
 
 }
