@@ -8,53 +8,38 @@
 
 <style>
 
-*{
-box-sizing:border-box;
-}
-
 body{
 margin:0;
 padding:0;
 font-family:Arial,Helvetica,sans-serif;
 background:linear-gradient(135deg,#ff7eb3,#ff758c,#ff9a9e);
-min-height:100vh;
 overflow:hidden;
 text-align:center;
-color:white;
 }
-
-/* container */
 
 .container{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
+color:white;
 width:90%;
-max-width:420px;
+max-width:500px;
 }
 
 h1{
-font-size:32px;
-margin-bottom:10px;
+font-size:45px;
 }
-
-p{
-font-size:16px;
-}
-
-/* button */
 
 button{
-padding:14px 28px;
-font-size:16px;
+padding:14px 30px;
+font-size:18px;
 border:none;
 border-radius:30px;
 background:white;
 color:#e63946;
 cursor:pointer;
 margin-top:20px;
-font-weight:bold;
 }
 
 /* book */
@@ -64,12 +49,12 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%) scale(0);
-width:92%;
-max-width:420px;
-height:380px;
-background:#ff4d6d;
-border-radius:12px;
-box-shadow:0 20px 60px rgba(0,0,0,0.35);
+width:90%;
+max-width:500px;
+height:360px;
+background:#c1121f;
+border-radius:8px;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
 transition:0.6s;
 overflow:hidden;
 }
@@ -78,16 +63,14 @@ overflow:hidden;
 transform:translate(-50%,-50%) scale(1);
 }
 
-/* page */
-
 .page{
 position:absolute;
 width:100%;
 height:100%;
 background:#fff0f5;
-padding:25px;
+padding:30px;
+box-sizing:border-box;
 display:none;
-color:#c1121f;
 }
 
 .page.active{
@@ -95,7 +78,19 @@ display:block;
 }
 
 .page h2{
-margin-top:0;
+color:#c1121f;
+}
+
+/* image */
+
+.photo{
+width:140px;
+height:140px;
+object-fit:cover;
+border-radius:50%;
+margin-top:10px;
+border:4px solid white;
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
 }
 
 /* next button */
@@ -105,30 +100,23 @@ position:absolute;
 bottom:20px;
 right:20px;
 padding:8px 16px;
-background:#e63946;
+background:#c1121f;
 color:white;
 border:none;
 border-radius:20px;
 cursor:pointer;
 }
 
-/* rose */
-
 .rose{
 font-size:70px;
-margin-top:40px;
+margin-top:20px;
 }
-
-/* typing text */
 
 .typing{
-font-size:16px;
+font-size:18px;
 line-height:1.6;
 text-align:left;
-margin-top:10px;
 }
-
-/* hearts */
 
 .heart{
 position:absolute;
@@ -166,25 +154,34 @@ opacity:0;
 
 }
 
-/* mobile */
-
 @media (max-width:600px){
 
+.container{
+top:60%;
+}
+
 h1{
-font-size:26px;
+font-size:28px;
 }
 
 button{
-font-size:15px;
+font-size:16px;
 padding:12px 24px;
 }
 
 .book{
+width:92%;
 height:400px;
 }
 
 .typing{
-font-size:15px;
+font-size:16px;
+line-height:1.5;
+}
+
+.photo{
+width:120px;
+height:120px;
 }
 
 }
@@ -210,6 +207,8 @@ font-size:15px;
 <div class="page active" id="p1">
 
 <h2>Trang 1</h2>
+
+<img src="image.jpg" class="photo">
 
 <div class="rose">🌹</div>
 
@@ -241,7 +240,7 @@ font-size:15px;
 
 <h2>💖 Happy Women's Day 💖</h2>
 
-<p>Chúc bạn luôn hạnh phúc và xinh đẹp 🌸</p>
+<p>Chúc bạn luôn hạnh phúc và xinh đẹp</p>
 
 <button class="next" onclick="closeBook()">Đóng sổ</button>
 
@@ -303,8 +302,6 @@ typing()
 
 }
 
-/* hearts */
-
 setInterval(function(){
 
 let heart=document.createElement("div")
@@ -321,7 +318,7 @@ document.body.appendChild(heart)
 
 setTimeout(()=>heart.remove(),6000)
 
-},350)
+},300)
 
 </script>
 
