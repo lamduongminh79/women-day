@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 
 <html lang="vi">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Women's Day</title>
 
 <style>
@@ -35,7 +38,7 @@ left:50%;
 transform:translate(-50%,-50%);
 color:#e63946;
 width:90%;
-max-width:500px;
+max-width:420px;
 z-index:10;
 }
 
@@ -75,6 +78,7 @@ border-radius:12px;
 box-shadow:0 20px 60px rgba(0,0,0,0.4);
 transition:0.5s;
 overflow:hidden;
+z-index:5;
 }
 
 .book.open{
@@ -139,6 +143,8 @@ height:18px;
 background:red;
 transform:rotate(45deg);
 animation:float 6s linear infinite;
+z-index:1;
+pointer-events:none;
 }
 
 .heart:before,
@@ -176,7 +182,7 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%) scale(0);
 transition:0.6s;
-z-index:10;
+z-index:20;
 }
 
 #finalImage.show{
@@ -233,6 +239,7 @@ font-size:15px;
 <h2>Trang 1</h2>
 
 <div class="rose">🌹</div>
+
 <div class="typing" id="text0"></div>
 
 <button class="next" onclick="nextPage(2)">Trang tiếp ➜</button>
@@ -272,18 +279,28 @@ font-size:15px;
 </div>
 
 <div id="finalImage">
+
 <img src="image.jpg">
+
 </div>
 
 <script>
 
 function openBook(){
+
 document.getElementById("book").classList.add("open")
+
+typeText("text0",
+"Lời nói đầu tiên thì hong biết nói gì hết thôi thì tặng cho vợ cành bông nè hẹ hẹ. Không anh chứ ai đố em tìm được ai giống anh thứ 2");
+
 }
 
 function closeBook(){
+
 document.getElementById("book").classList.remove("open")
+
 document.getElementById("finalImage").classList.add("show")
+
 }
 
 function nextPage(page){
@@ -292,19 +309,18 @@ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"))
 
 document.getElementById("p"+page).classList.add("active")
 
-if(page===1){
-typeText("text0",
-"Lời nói đầu tiên thì hong biết nói gì hết thôi thì tặng cho vợ cành bông nè hẹ hẹ. Không anh chứ ai đố em tìm được ai giống anh thứ 2");
-}
-
 if(page===2){
+
 typeText("text1",
-"Nhân ngày 8/3, anh không phải là con người ngọt ngào trong lời nói em cũng biết nên là ngay lúc này anh không biết mình phải nói gì, thôi thì anh sẽ chúc em ngày càng đẹp hơn như những bông hoa hồng nỡ rộ khi gặp đúng mùa, chúc em tìm được những điều tuyệt vời nhất trong hành trình của em, những gì tuyệt vời luôn ở phía sau...");
+"Nhân ngày 8/3, anh không phải là con người ngọt ngào trong lời nói em cũng biết nên là ngay lúc này anh không biết mình phải nói gì, thôi thì anh sẽ chúc em ngày càng đẹp hơn như những bông hoa hồng nở rộ khi gặp đúng mùa.");
+
 }
 
 if(page===3){
+
 typeText("text2",
-"Như anh đã từng nói anh không cầu kì và phô trương, tình yêu của anh được định nghĩa hành động, và hành động của anh được chứng minh bằng 2 ngày tìm và lựa thật kĩ về món quà sắp tặng cho em nhưng do là Vĩnh Long không giao nhanh hoặc hỏa tốc được nên bị delay 2 3 ngày sau. Tình yêu của anh chỉ đơn giản là vậy thôi sẽ có trễ nhưng nhất định cô gái của anh không thiệt thòi đâu. Em có thắc mắc là món quà gì không ? bấm qua tiếp đi đắn đo lắm á nha ahihi");
+"Như anh đã từng nói anh không cầu kì và phô trương, tình yêu của anh được định nghĩa bằng hành động. Anh đã dành thời gian tìm và lựa thật kĩ món quà cho em. Có thể hơi trễ một chút nhưng cô gái của anh sẽ không bao giờ thiệt thòi đâu.");
+
 }
 
 }
@@ -312,7 +328,9 @@ typeText("text2",
 function typeText(id,text){
 
 let i=0
+
 let speed=40
+
 let element=document.getElementById(id)
 
 element.innerHTML=""
@@ -335,6 +353,8 @@ typing()
 
 }
 
+/* tim bay */
+
 setInterval(function(){
 
 let heart=document.createElement("div")
@@ -356,4 +376,5 @@ setTimeout(()=>heart.remove(),6000)
 </script>
 
 </body>
+
 </html>
